@@ -30,11 +30,12 @@ if not os.path.exists(PHISHING_SITE_DIR):
 
 raw_origins = os.getenv("ALLOWED_ORIGINS", "*")
 allowed_origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+is_wildcard = "*" in allowed_origins or not allowed_origins
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins if allowed_origins else ["*"],
-    allow_credentials=True,
+    allow_origins=["*"] if is_wildcard else allowed_origins,
+    allow_credentials=not is_wildcard,
     allow_methods=["*"],
     allow_headers=["*"],
 )

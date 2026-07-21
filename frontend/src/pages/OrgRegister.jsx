@@ -65,7 +65,16 @@ export default function OrgRegister() {
         navigate("/org-login");
       }, 2000);
     } catch (err) {
-      setError(err.response?.data?.detail || "Registration failed. Please try again.");
+      const detail = err.response?.data?.detail;
+      if (typeof detail === "string") {
+        setError(detail);
+      } else if (Array.isArray(detail)) {
+        setError(detail.map((d) => d.msg || JSON.stringify(d)).join(" | "));
+      } else if (err.message) {
+        setError(`Unable to connect to backend server (${err.message})`);
+      } else {
+        setError("Registration failed. Please check backend connection.");
+      }
     }
   };
 
