@@ -13,4 +13,6 @@ slowapi
 psycopg2-binary
 python-jose[cryptography]
 python-multipart
+requests
 scapy
+
