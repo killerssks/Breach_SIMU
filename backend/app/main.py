@@ -24,7 +24,9 @@ from fastapi.staticfiles import StaticFiles
 
 # BASE DIRECTORY LOGIC
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PHISHING_SITE_DIR = os.path.join(BASE_DIR, "..", "..", "phishing-site")
+PHISHING_SITE_DIR = os.path.join(BASE_DIR, "..", "phishing-site")
+if not os.path.exists(PHISHING_SITE_DIR):
+    PHISHING_SITE_DIR = os.path.join(BASE_DIR, "..", "..", "phishing-site")
 
 raw_origins = os.getenv("ALLOWED_ORIGINS", "*")
 allowed_origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]

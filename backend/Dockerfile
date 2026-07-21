@@ -20,9 +20,8 @@ COPY requirements.txt ./requirements.txt
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files into the image
-COPY backend /app/backend
-COPY phishing-site /app/phishing-site
+# Copy all backend files (including app & phishing-site) into container
+COPY . /app/backend
 
 WORKDIR /app/backend
 

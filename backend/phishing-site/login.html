@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Relish Tech Global</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .logo-text {
+            font-weight: bold;
+            font-size: 20px;
+            color: #714b67;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            color: #4b5563;
+            font-size: 14px;
+        }
+        .contact-btn {
+            padding: 8px 15px;
+            background: #714b67;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .login-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 350px;
+        }
+        .label-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        label {
+            font-size: 14px;
+            color: #111827;
+        }
+        .sub-link {
+            font-size: 12px;
+            color: #6b7280;
+            text-decoration: none;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #714b67;
+            box-shadow: 0 0 0 1px #714b67;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background-color: #714b67;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .footer-text {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-text">RELISH</div>
+        <div class="nav-links">Home &nbsp;&nbsp; Shop &nbsp;&nbsp; Contact us</div>
+        <button class="contact-btn">Contact Us</button>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <form id="loginForm">
+                <div class="label-group">
+                    <label for="email">Email</label>
+                    <a href="#" class="sub-link">Choose a user</a>
+                </div>
+                <input type="email" id="email" required placeholder="Email">
+
+                <div class="label-group">
+                    <label for="password">Password</label>
+                    <a href="#" class="sub-link">Reset Password</a>
+                </div>
+                <input type="password" id="password" required placeholder="Password">
+
+                <button type="submit" class="btn-login">Log in</button>
+                <div class="footer-text">Don't have an account?</div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Auto-fill email from URL if present
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const emailParam = params.get('email');
+            if (emailParam) {
+                document.getElementById('email').value = emailParam;
+            }
+        };
+    </script>
+</body>
+</html>
