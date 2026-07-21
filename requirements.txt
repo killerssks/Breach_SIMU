@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-dotenv
+reportlab
+passlib[bcrypt]
+pydantic[email]
+paramiko==3.4.0
+cryptography==42.0.5
+psutil
+slowapi
+psycopg2-binary
+python-jose[cryptography]
+python-multipart

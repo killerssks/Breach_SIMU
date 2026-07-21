@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Environment & Secrets
+.env
+backend/.env
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+landing-page/dist/
+
+# Databases
+*.db
+*.sqlite3
+app.db
+breach.db
+backend/app.db
+backend/breach.db
+
+# Large binaries & wordlists
+rockyou.txt
+npcap-installer.exe
+*.pdf
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

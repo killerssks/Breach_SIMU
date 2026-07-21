@@ -1,0 +1,16 @@
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+app.db
+breach.db
+node_modules
+.vscode
+.git
+.gitignore
+*.pdf
+rockyou.txt
+npcap-installer.exe

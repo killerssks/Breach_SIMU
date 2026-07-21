@@ -1,0 +1,144 @@
+/* index.css */
+
+/* Root variables */
+:root {
+  --bg-dark: #0a0a1a;
+  --bg-hero: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --text-light: #f0f4ff;
+  --accent-cyan: #00d8ff;
+  --font-primary: 'Inter', sans-serif;
+}
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('file:///C:/Users/Roshan%20Kappala/.gemini/antigravity/brain/76acf6d8-2659-4cfd-95c6-0625d1d620d3/hero_image_1778065978880.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,26,0.45);
+  border-radius: 12px;
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: 2rem;
+}
+.cta-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background: var(--accent-cyan);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  background: #00b3cc;
+}
+
+/* Section Styling */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.pillar-card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-3px);
+}
+.pillar-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Audience Value List */
+audience-value ul {
+  list-style: none;
+  padding-left: 0;
+}
+audience-value li {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {font-size: 1.8rem;}
+  .hero-subtitle {font-size: 1rem;}
+}
