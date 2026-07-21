@@ -91,6 +91,10 @@ export default function Phishing() {
       console.log("📡 Breach Stream Connected");
     };
 
+    ws.onerror = () => {
+      // Handle socket error gracefully
+    };
+
     ws.onmessage = (event) => {
       try {
         const message = JSON.parse(event.data);

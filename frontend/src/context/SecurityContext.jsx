@@ -178,9 +178,13 @@ export const SecurityProvider = ({ children }) => {
                 }
             };
             
+            ws.onerror = () => {
+                // Handle cold-start or temporary disconnect gracefully
+            };
+            
             ws.onclose = () => {
                 if (isCurrent) {
-                    setTimeout(connect, 3000);
+                    setTimeout(connect, 5000);
                 }
             };
         };
